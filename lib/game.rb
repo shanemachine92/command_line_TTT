@@ -1,30 +1,45 @@
-require './board'
-require './player'
-require './rules'
-
 class Game
-	include Rules
 
-	def initialize
-		@board = Board.new
-		@player1 = Player.new
-		@player2 = Player.new
+	puts 'Hello! Time to decide the fate of Ferelden in Templars vs. Mages'
+
+	puts 'Templar, what is your name?'
+	player1_name = gets.chomp
+
+	puts 'Mage, what is your name?'
+	player2_name = gets.chomp
+
+
+	board = Board.new
+	player1 = Player.new(player1_name, 'T')
+	player2 = Player.new(player2_name, 'M')
+	win = false
+	draw = false
+	current_player = player1
+
+	def switch_player
+		if current_player == player1
+			player2
+		else
+			player1
+		end
 	end
 
-	private
-
-	def play_game(board, players)
-		puts 'P'
-
+	def game_play
+		until win = true || draw = true
+			board.render
+			puts 'Your turn, #{current_player.name}'
+		end
 	end
 
-	def switch_players
-	end 
-
-	def get_move
-
-	end
-
-	def game_over
-	end
 end
+
+class Player
+	attr_accessor :name, :piece
+
+  def initialize(name, piece='')
+    @name = name
+    @piece = piecesa
+  end
+end
+
+
