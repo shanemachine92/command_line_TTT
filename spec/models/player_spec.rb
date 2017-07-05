@@ -1,8 +1,4 @@
-class Player < ActiveRecord::Base
-	attr_accessor :name, :piece
-
-  def initialize(name, piece)
-    @name = name
-    @piece = piece
-  end
+RSpec.describe Player  do
+	it 'does turn' do
+	end
 end
