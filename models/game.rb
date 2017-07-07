@@ -77,6 +77,3 @@ class Game
 end
 
 Game.new.play_game
-
-
-
