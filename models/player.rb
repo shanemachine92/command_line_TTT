@@ -1,5 +1,5 @@
 class Player
-	attr_accessor :name, :piece
+  attr_accessor :name, :piece
 
   def initialize(name, piece, board)
     @name = name
@@ -7,7 +7,7 @@ class Player
     @board = board
   end
   
-  def do_turn (selected_cell)
+  def take_turn (selected_cell)
     @board.cells[selected_cell.to_sym] = @piece
   end
 end

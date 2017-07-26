@@ -10,8 +10,7 @@ class Board
   end
 
   def cell_empty?(selected_cell)
-    return true if @cells[selected_cell.to_sym] == ' '
-    false
+    @cells[selected_cell.to_sym] == ' '
   end
 
   def game_won?(piece)
@@ -33,7 +32,7 @@ class Board
     false
   end
 
-    def board_rows
+  def board_rows
     rows = [
       @cells[:one], @cells[:two], @cells[:three],
       @cells[:four], @cells[:five], @cells[:six],
