@@ -3,14 +3,14 @@ class Board
 
   def initialize 
     @cells = {
-      one: ' ', two: ' ', three: ' ',
-      four: ' ', five: ' ', six: ' ',
-      seven: ' ', eight: ' ', nine: ' ',
+      one: '', two: '', three: '',
+      four: '', five: '', six: '',
+      seven: '', eight: '', nine: '',
     }
   end
 
   def cell_empty?(selected_cell)
-    @cells[selected_cell.to_sym] == ' '
+    (@cells[selected_cell.to_sym]).empty?
   end
 
   def game_won?(piece)
@@ -18,11 +18,11 @@ class Board
   end
 
   def render
-    puts "#{@cells[:one]}|#{@cells[:two]}|#{@cells[:three]}"
-    puts '-----'
-    puts "#{@cells[:four]}|#{@cells[:five]}|#{@cells[:six]}"
-    puts '-----'
-    puts "#{@cells[:seven]}|#{@cells[:eight]}|#{@cells[:nine]}"
+    puts " #{@cells[:one]} | #{@cells[:two]} | #{@cells[:three]}"
+    puts '-----------'
+    puts " #{@cells[:four]} | #{@cells[:five]} | #{@cells[:six]}"
+    puts '-----------'
+    puts " #{@cells[:seven]} | #{@cells[:eight]} | #{@cells[:nine]}"
   end
 
   def win?(win_type, piece)
